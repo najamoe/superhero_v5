@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>powers</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link th:href="@{/main.css}" rel="stylesheet">
+</head>
+
+<body>
+<h1 th:text="superpowers"/>
+<table class="table table-dark">
+
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Superpower</th>
+  </tr>
+
+  <tr th:each="hero :${powerTypeByName}">
+    <td th:text="${hero.realName}"/>
+    <td th:text="${hero.powerType}"/>
+  </tr>
+</table>
+<br>
+<button><a href="http://localhost:9090">Back</a></button>
+</body>
+</html>
